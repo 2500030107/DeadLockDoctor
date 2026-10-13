@@ -1,0 +1,18 @@
+# Deadlock scenario
+RESET_DEADLOCK
+PRINT
+
+# P0 already holds R0 and waits for R1.
+REQUEST 0 0 1 0
+
+# P1 already holds R1 and waits for R0.
+REQUEST 1 1 0 0
+
+# This creates P0 -> P1 -> P0.
+DETECT
+
+# Break the cycle by selecting P1 as the victim.
+RECOVER 1
+
+DETECT
+PRINT

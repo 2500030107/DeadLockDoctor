@@ -1,0 +1,12 @@
+# Safe scenario
+RESET_SAFE
+PRINT
+SAFE_CHECK
+
+# A request that can be granted safely
+REQUEST 0 0 1 0
+SAFE_CHECK
+
+# Release the resource
+RELEASE 0 0 1 0
+SAFE_CHECK
